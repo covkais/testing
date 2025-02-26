@@ -71,6 +71,18 @@ Rayfield:Notify({
 },
 })
 
+local player = game.Players.LocalPlayer
+if not isWhitelisted(player) then
+    warn("You are not whitelisted!")
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+        Title = "Access Denied",
+        Text = "You are not whitelisted to use this script.",
+        Duration = 5,
+    })
+    return -- Exit the script if the player is not whitelisted
+end
+
+
 local MainTab = Window:CreateTab("Main Stuff", 4483362458) -- Title, Image
 local MainSection = MainTab:CreateSection("Main")
 
