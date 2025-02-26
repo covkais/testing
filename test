@@ -88,7 +88,7 @@ local function notify(message, time, type)
 end
 
 -- Textbox for Duplication Amount
-DupeTab:CreateInput({
+MainTab:CreateInput({
     Name = "Enter Card Dupe Amount",
     PlaceholderText = "10",
     RemoveTextAfterFocusLost = false,
@@ -211,4 +211,4 @@ MainTab:CreateButton({
         duplicateCardsAndLaptops()
     
         end
-
+})
