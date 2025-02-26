@@ -1,11 +1,11 @@
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 local Window = Rayfield:CreateWindow({
-   Name = "KZHUB",
+   Name = "Test",
    Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
-   LoadingTitle = "BY KZHUB",
-   LoadingSubtitle = "BY KZHUB",
-   Theme = "Default", -- Check https://docs.sirius.menu/rayfield/configuration/themes
+   LoadingTitle = "Hold on...",
+   LoadingSubtitle = "By Daddy",
+   Theme = "Green", -- Check https://docs.sirius.menu/rayfield/configuration/themes
 
    DisableRayfieldPrompts = false,
    DisableBuildWarnings = false, -- Prevents Rayfield from warning when the script has a version mismatch with the interface
@@ -52,7 +52,7 @@ Rayfield:Notify({
 local MainTab = Window:CreateTab("Main Player", 4483362458) -- Title, Image
 local MainSection = MainTab:CreateSection("main")
 
-local Toggle = PlayerTab:CreateToggle({
+local Toggle = MainTab:CreateToggle({
    Name = "Fly V3",
    CurrentValue = false,
    Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
