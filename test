@@ -1,5 +1,27 @@
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
+-- Whitelist of usernames 
+local whitelist = {
+    "Kaisfrms2hub",  
+    "Player"
+    "Player", 
+    "Player",
+    "Player",
+    "Player",
+    "Player",
+    "Player",
+}
+
+-- Function to check if a player is whitelisted (case-insensitive)
+local function isWhitelisted(player)
+    for _, username in ipairs(whitelist) do
+        if player.Name:lower() == username:lower() then
+            return true
+        end
+    end
+    return false
+end
+
 local Window = Rayfield:CreateWindow({
    Name = "Test",
    Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
