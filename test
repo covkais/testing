@@ -70,7 +70,7 @@ local VirtualInputManager = game:GetService("VirtualInputManager")
 local player = Players.LocalPlayer
 
 local dupeAmount = 10
-local StatusLabel = MainTab:CreateLabel("Status: Waiting for action...")
+local StatusLabel = DupeTab:CreateLabel("Status: Waiting for action...")
 
 -- Notification function with error handling
 local function notify(message, time, type)
@@ -88,7 +88,7 @@ local function notify(message, time, type)
 end
 
 -- Textbox for Duplication Amount
-MainTab:CreateInput({
+DupeTab:CreateInput({
     Name = "Enter Card Dupe Amount",
     PlaceholderText = "10",
     RemoveTextAfterFocusLost = false,
@@ -205,7 +205,7 @@ local function duplicateCardsAndLaptops()
 end
 
 -- Button for Duplication
-MainTab:CreateButton({
+DupeTab:CreateButton({
     Name = "Start Card Duplication",
     Callback = function()
         duplicateCardsAndLaptops()
