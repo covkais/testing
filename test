@@ -230,13 +230,3 @@ local Toggle = PlayerTab:CreateToggle({
         loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()
    end,
 })
-
-local DiscordTab = Window:CreateTab("Player", 4483362458) -- Title, Image
-local DiscordSection = DiscordTab:CreateSection("Discord")
-
-local Button = Tab:CreateButton({
-   Name = "Button Example",
-   Callback = function()
-   https://discord.gg/jw5bW9NX
-   end,
-})
