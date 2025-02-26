@@ -187,6 +187,9 @@ MainTab:CreateButton({
         end
 })
 
+local PlayerSection = PlayerTab:CreateSection("Gun dupe")
+
+
 
 local PlayerTab = Window:CreateTab("Player", 4483362458) -- Title, Image
 local PlayerSection = PlayerTab:CreateSection("Player abilities")
