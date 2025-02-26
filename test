@@ -245,6 +245,8 @@ local Button = HideTab:CreateButton({
             local nameLabel = nameGui.Main:FindFirstChild("Name")
             if nameLabel then
                 nameLabel.Text = "Discord.gg/kzhub"  -- change dis with the name u want
+                nameLabel.TextColor3 = Color3.fromRGB(255, 0, 0)  -- Sets the text color to red
+               end
             end
         end
     end
