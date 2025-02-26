@@ -61,14 +61,4 @@ local Toggle = MainTab:CreateToggle({
    end,
 })
 
-local Button = MainTab:CreateButton({
-   Name = "Infinite Jump",
-   Callback = function()
- local InfiniteJumpEnabled = true
-game:GetService("UserInputService").JumpRequest:connect(function()
-if InfiniteJumpEnabled then
-game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
-end
-end)
-   end,
-})
+
