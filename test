@@ -62,7 +62,7 @@ local Toggle = MainTab:CreateToggle({
 })
 
 local DupeTab = Window:CreateTab("Dupes", 4483362458) -- Title, Image
-local DupeSection = MainTab:CreateSection("Dupes")
+local DupeSection = DupeTab:CreateSection("Dupes")
 
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
