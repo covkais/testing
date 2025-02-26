@@ -187,9 +187,37 @@ MainTab:CreateButton({
         end
 })
 
-local PlayerSection = PlayerTab:CreateSection("Gun dupe")
+local PlayerSection = MainTab:CreateSection("Gun dupe")
 
+local Toggle = MainTab:CreateToggle({
+   Name = "Dupe gun",
+   CurrentValue = false,
+   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+               local player = game.Players.LocalPlayer
+        local character = player.Character or player.CharacterAdded:Wait()
+        local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+        local safeZones = game.Workspace.SafeZones:GetChildren()
+        
+        local closestSafeZone = nil
+        local shortestDistance = math.huge 
 
+        for _, safeZone in ipairs(safeZones) do
+            local distance = (humanoidRootPart.Position - safeZone.Position).Magnitude
+            if distance < shortestDistance then
+                shortestDistance = distance
+                closestSafeZone = safeZone
+            end
+        end
+        
+        if closestSafeZone then
+            humanoidRootPart.CFrame = closestSafeZone.CFrame
+            character.Humanoid:ChangeState(Enum.HumanoidStateType.Dead) 
+        else
+            warn("No safe zones found.")
+        end
+    end
+})
 
 local PlayerTab = Window:CreateTab("Player", 4483362458) -- Title, Image
 local PlayerSection = PlayerTab:CreateSection("Player abilities")
