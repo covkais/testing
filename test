@@ -102,7 +102,7 @@ Rayfield:Notify({
 local MainTab = Window:CreateTab("Main Player", 4483362458) -- Title, Image
 local MainSection = MainTab:CreateSection("main")
 
-local Button = Tab:CreateButton({
+local Button = MainTab:CreateButton({
    Name = "Infinite Jump",
    Callback = function()
     local InfiniteJumpEnabled = true
