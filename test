@@ -1,26 +1,5 @@
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
--- Whitelist of usernames 
-local whitelist = {
-    "kaisfrms2hub",  
-    "Player"
-    "Player", 
-    "Player",
-    "Player",
-    "Player",
-    "Player",
-    "Player",
-}
-
--- Function to check if a player is whitelisted (case-insensitive)
-local function isWhitelisted(player)
-    for _, username in ipairs(whitelist) do
-        if player.Name:lower() == username:lower() then
-            return true
-        end
-    end
-    return false
-end
 
 local Window = Rayfield:CreateWindow({
    Name = "KZHUB | PREMIUM",
@@ -55,17 +34,6 @@ local Window = Rayfield:CreateWindow({
       Key = {"KAIS"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
    }
 })
-
-local player = game.Players.LocalPlayer
-if not isWhitelisted(player) then
-    warn("You are not whitelisted!")
-    game:GetService("StarterGui"):SetCore("SendNotification", {
-        Title = "Access Denied",
-        Text = "You are not whitelisted to use this script.",
-        Duration = 5,
-    })
-    return -- Exit the script if the player is not whitelisted
-end
 
 local MainTab = Window:CreateTab("Main Stuff", 4483362458) -- Title, Image
 local MainSection = MainTab:CreateSection("Main")
